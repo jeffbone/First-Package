@@ -3,6 +3,6 @@ Title: Makes Factors Less Annoying
 Version: 0.0.0.9000
 Authors@R: person("Bone", "Jeffrey", email = "jbone@stat.ubc.ca", role = c("aut", "cre"))
 Description: This package makes using factors less of a headache.
-Depends: MIT + file licensse
+Depends: MIT + file LICENSE
 LazyData: true
 Suggests: testthat
