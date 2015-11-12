@@ -1,9 +1,9 @@
 #' Binds Two Factors Together
 #'
-#' @param a factor
-#' @param b factor
+#' @param a a factor
+#' @param b a factor
 #'
-#' @return factor
+#' @return a factor combined of the input factors
 #' @export
 #'
 #' @examples

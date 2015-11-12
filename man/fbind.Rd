@@ -7,12 +7,12 @@
 fbind(a, b)
 }
 \arguments{
-\item{a}{factor}
+\item{a}{a factor}
 
-\item{b}{factor}
+\item{b}{a factor}
 }
 \value{
-factor
+a factor combined of the input factors
 }
 \description{
 Binds Two Factors Together
