@@ -1,8 +1,8 @@
 Package: FirstPackage
-Title: What the Package Does (one line, title case)
+Title: Makes Factors Less Annoying
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: person("Bone", "Jeffrey", email = "jbone@stat.ubc.ca", role = c("aut", "cre"))
+Description: This package makes using factors less of a headache.
 Depends: R (>= 3.2.2)
 License: What license is it under?
 LazyData: true
