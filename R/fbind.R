@@ -7,7 +7,9 @@
 #' @export
 #'
 #' @examples
-#' fbind(iris$Species[c(1,51,101)], PlantGrowth$group[c(1,11,21)])
+#' fbind(factor(c("a,b),factor(c("c,d")))
 fbind <- function(a,b){
+  if(!is.factor(a)) stop("Not a Factor")
+  if(!is.factor(b)) stop("Not a Factor")
   factor(c(as.character(a),as.character(b)))
 }

@@ -1,8 +1,14 @@
-# write dreq_out()
-## input: factor
-## output: tbl_df w/ input factor levels and frequencies
+#' Make a frequency table for a factor
+#'
+#' @param x factor
+#'
+#' @return tbl_df
+#' @export
+#' @examples
+#' freq_out(iris$Species)
 
-freq_out <- function(x){
-  xdf <- dplyr::data.frame(x)
+freq_out <- function(x) {
+  if(!is.factor(x)) stop("Not a Factor")
+  xdf <- dplyr::data_frame(x)
   dplyr::count(xdf, x)
 }
