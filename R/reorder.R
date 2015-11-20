@@ -5,7 +5,7 @@
 #' @return factor
 #' @export
 #' @examples
-#' reorder(iris$Species)
+#' reorder_factor(iris$Species)
 
 reorder_factor <- function(x) {
   library(dplyr)

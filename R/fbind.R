@@ -5,9 +5,9 @@
 #'
 #' @return a factor combined of the input factors
 #' @export
-#'
-#' @examples
-#' fbind(factor(c("a,b),factor(c("c,d")))
+#'@examples ab <- as.factor(c("a","b"))
+#'          cd <- as.factor(c("c","d"))
+#'          fbind(ab,cd)
 fbind <- function(a,b){
   if(!is.factor(a)) stop("Not a Factor")
   if(!is.factor(b)) stop("Not a Factor")

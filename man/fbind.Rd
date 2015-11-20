@@ -18,6 +18,8 @@ a factor combined of the input factors
 Binds Two Factors Together
 }
 \examples{
-fbind(factor(c("a,b),factor(c("c,d")))
+ab <- as.factor(c("a","b"))
+         cd <- as.factor(c("c","d"))
+         fbind(ab,cd)
 }
 

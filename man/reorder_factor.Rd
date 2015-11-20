@@ -16,6 +16,6 @@ factor
 Reorder the levels of a factor by frequency
 }
 \examples{
-reorder(iris$Species)
+reorder_factor(iris$Species)
 }
 
