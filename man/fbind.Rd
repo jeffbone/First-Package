@@ -18,6 +18,6 @@ a factor combined of the input factors
 Binds Two Factors Together
 }
 \examples{
-fbind(iris$Species[c(1,51,101)], PlantGrowth$group[c(1,11,21)])
+fbind(factor(c("a,b),factor(c("c,d")))
 }
 
