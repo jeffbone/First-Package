@@ -35,4 +35,4 @@ y
 reorder_factor(y)
 ```
 
-For more detailed examples and descriptions please see the [https://github.com/jeffbone/First-Package/blob/master/vignettes/overview.Rmd](Vignette). 
+For more detailed examples and descriptions please see the [Vignette](https://github.com/jeffbone/First-Package/blob/master/vignettes/overview.Rmd)). 
