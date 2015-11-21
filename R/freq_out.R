@@ -12,3 +12,4 @@ freq_out <- function(x) {
   xdf <- dplyr::data_frame(x)
   dplyr::count(xdf, x)
 }
+

@@ -1,5 +1,5 @@
 ---
-title: "Foo Factor"
+title: "First Package"
 author: "Jeff Bone"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -8,51 +8,67 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+#Overview
+This package is designed to simplify working with factors. It consists of three functions as outlined below. 
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
-
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
-
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+#Package Installation
+One must first install and load the package. 
+```{r}
+#install.packages("FirstPackage")
+library("FirstPackage")
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
-
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+#Data to be Used in Examples
+```{r,error=TRUE}
+fruit <- c("Apples","Oranges","Bananas")
+fruit <- as.factor(fruit)
+gourd <- c("Potatoes","Yams","Squash")
+gourd <- as.factor(gourd)
+veg <- c("Carrots","Bell Peppers","Celery")
+veg <- as.factor(veg)
 ```
 
-Also a quote using `>`:
+#Example of fbind
+fbind takes two factors and puts them together into one. The input is two factors and the output is one factor. For example,
+```{r,error=TRUE}
+#example 1
+fbind(fruit,gourd)
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+#example 2
+fbind(veg,fruit)
+
+#example 3
+fbind(1,2) #won't run if inputs are not factors
+```
+
+#Example of freq_out
+freq_out creates a frequency table for a factor. The input must be a factor and the output is a tbl data frame. For example, 
+```{r,error=TRUE}
+#example 1
+fruit_sample <- sample(fruit,20,rep=TRUE)
+fruit_sample
+freq_out(fruit_sample)
+
+#example 2
+veg_sample <- sample(veg,20,rep=TRUE)
+combined_fruit_veg <- fbind(fruit_sample,veg_sample)
+freq_out(combined_fruit_veg)
+
+#example 3
+freq_out(c(1,1,1,1)) #won't run if input is not a factor
+```
+
+#Example of reorder_factor
+reorder_factor reorders the levels of a factor based on frequency. The input is a factor and the output is the same factor with reordered levels. For example, 
+```{r,error=TRUE}
+#example 1
+veg_sample <- sample(veg,20,rep=TRUE)
+veg_sample
+reorder_factor(veg_sample)
+
+#example 2
+reorder_factor(gourd) #doesn't reorder if all levels have same number
+
+#example 3
+reorder_factor(c(1,2,3)) #doesn't run if input is not a factor
+```
