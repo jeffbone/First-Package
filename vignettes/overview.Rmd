@@ -15,7 +15,7 @@ This package is designed to simplify working with factors. It consists of three 
 One must first install and load the package. 
 ```{r}
 #install.packages("FirstPackage")
-library("FirstPackage")
+devtools::install_github("jeffbone/First-Package")
 ```
 
 #Data to be Used in Examples

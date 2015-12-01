@@ -7,7 +7,7 @@ This is the landing page for Jeff Bone's First Package. This package can be used
 To install simply type:
 ```{r}
 #install.packages("FirstPackage")
-library("FirstPackage")
+devtools::install_github("jeffbone/First-Package")
 ```
 
 #Example of fbind
